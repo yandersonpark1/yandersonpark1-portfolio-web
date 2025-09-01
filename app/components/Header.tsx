@@ -19,7 +19,7 @@ export default function Header() {
           <div className="flex-shrink-0">
             <h1 className="text-2xl font-bold text-gray-900 cursor-pointer"
                 onClick={() => scrollToSection('home')}>
-              Your Name
+              Yongwoo Anderson Park
             </h1>
           </div>
           

@@ -2,11 +2,12 @@
 
 export default function About() {
   const skills = [
+    { name: "Python", level: 100, color: "bg-yellow-500" },
+    { name: "Java", level: 75, color: "bg-yellow-500" },
     { name: "React & Next.js", level: 90, color: "bg-blue-500" },
     { name: "TypeScript", level: 85, color: "bg-blue-600" },
     { name: "Tailwind CSS", level: 88, color: "bg-cyan-500" },
     { name: "Node.js", level: 75, color: "bg-green-500" },
-    { name: "Python", level: 70, color: "bg-yellow-500" },
     { name: "UI/UX Design", level: 80, color: "bg-purple-500" },
   ]
 
@@ -41,8 +42,8 @@ export default function About() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer who loves creating digital experiences that make a difference. 
-            Here's my journey and what I bring to the table.
+            I'm a innovative engineer who loves transforming data into insights for real-world change. 
+            Here's my journey so far!
           </p>
         </div>
 
@@ -53,9 +54,8 @@ export default function About() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">My Story</h3>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  I started my coding journey in college, fascinated by how lines of code 
-                  could create beautiful, interactive experiences. What began as curiosity 
-                  quickly became a passion.
+                  I started programming in college, fascinated by the ability of software and data to solve complex problems.
+                  Throughout my studies so far, I have built a strong foundation 
                 </p>
                 <p>
                   Today, I specialize in building modern web applications using React, 
