@@ -2,13 +2,14 @@
 
 export default function About() {
   const skills = [
-    { name: "Python", level: 100, color: "bg-yellow-500" },
-    { name: "Java", level: 75, color: "bg-yellow-500" },
-    { name: "React & Next.js", level: 90, color: "bg-blue-500" },
-    { name: "TypeScript", level: 85, color: "bg-blue-600" },
-    { name: "Tailwind CSS", level: 88, color: "bg-cyan-500" },
-    { name: "Node.js", level: 75, color: "bg-green-500" },
-    { name: "UI/UX Design", level: 80, color: "bg-purple-500" },
+    { name: "Python", level: 100, color: "bg-blue-500" },
+    { name: "Java", level: 100, color: "bg-red-500" },
+    { name: "JavaScript", level: 100, color: "bg-yellow-500" },
+    { name: "TypeScript", level: 75, color: "bg-blue-600" },
+    { name: "Next.js", level: 75, color: "bg-cyan-200" },
+    { name: "React", level: 50, color: "bg-cyan-700" },
+    { name: "Tailwind CSS", level: 50, color: "bg-cyan-500" },
+    { name: "SQL", level: 100, color: "bg-green-500" },
   ]
 
   const experiences = [
@@ -16,18 +17,21 @@ export default function About() {
       title: "Full Stack Software Engineer",
       company: "Oberlin College", 
       period: "Jan 2025 - Current", 
+      company_url: "https://www.oberlin.edu/", //
       description: "I designed and implemented an end-to-end data pipeline for pitching performance, automating data ingestion from the cloud with daily cron jobs to ensure timely updates. I integrated FastAPI with Rapsodo’s REST API using secure API keys to fetch and persist pitch data into MongoDB, and built backend services that allow users to query and analyze performance on-demand. To support real-time analytics, I developed Python scripts that process and classify pitch data, generating interactive visualizations that contributed to a 6.8% improvement in team pitching success. On the frontend, I built a React dashboard with interactive charts and filters to make performance insights accessible and actionable. I also containerized the system with Docker and deployed it on AWS, enabling scalable, cloud-based access for the team."
     },
     {
       title: "Machine Learning Computational Biology REU Intern",
       company: "Rosetta Commons, Johns Hopkins University",
       period: "May 2025 - Aug 2025",
+      company_url: "https://rosettacommons.org/", //
       description: "Built and optimized a computational protein design pipeline using ML models such as RFDiffusionAA, LigandMPNN, Rosetta Libraries, and AlphaFold3, improving computational confidence metrics by roughly 4% per iteration. I automated large-scale protein design workflows with SLURM and Bash scripts on an HPC cluster, processing thousands of structures and sequences while reducing runtime by approximately 10%. I applied PyTorch-based ML techniques and statistical analyses to evaluate and improve binder affinity by up to 1000%, leveraging HPC resources to scale iterative design loops and enhance reproducibility and throughput. I also presented a research poster at the Summer Rosetta Conference, showcasing advancements in ML-driven protein design."
     }, 
     {
       title: "BackEnd Software Engineer",
       company: "SplashBI",
       period: "May 2024 - August 2024",
+      company_url: "https://splashbi.com/", //
       description: "I worked in SplashBI's HR analytics team developing and maintaining automated data pipelines that transformed HR data from Oracle Cloud and MySQL into analytics-ready formats. I designed and optimized SQL database schemas to track key HR metrics like retention, turnover, and performance, and developed RESTful APIs to connect backend data with internal dashboards. By automating queries and Excel workflows, I reduced manual reporting time for enterprise clients by nearly 50%. I also created scalable data models to uncover growth opportunities and presented improvements in biweekly demos to stakeholders from multiple enterprise companies."
     },
   ]
@@ -43,7 +47,7 @@ export default function About() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I'm a innovative engineer who loves transforming data into insights for real-world change. 
+            I'm a innovative engineer who loves transforming data into insights and real-time analysis for real-world change. 
             Here's my journey so far!
           </p>
         </div>
@@ -55,18 +59,14 @@ export default function About() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">My Story</h3>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  I started programming in college, fascinated by the ability of software and data to solve complex problems.
-                  Throughout my studies so far, I have built a strong foundation 
+                  I began programming in college, where I initially struggled even failing, but through persistence and practice I began to excel. Throughout my studies and career, I have built a strong foundation in computing, data analysis, and software development.
                 </p>
                 <p>
-                  Today, I specialize in building modern web applications using React, 
-                  Next.js, and TypeScript. I love the challenge of turning complex problems 
-                  into simple, elegant solutions.
+                  Today, I specialize in building web applications transforming data into real-life insights helping communities improve their decision-making. I love the challenge of turning complex problems 
+                  into simple, elegant solutions and I am passionate about leaving my mark in this world through my work.
                 </p>
                 <p>
-                  When I'm not coding, you'll find me exploring new technologies, 
-                  contributing to open source projects, or sharing knowledge with 
-                  the developer community.
+                  Outside of programming, I am currently sidequesting as a computational biology researcher with the Goldman Lab at Oberlin College engineering evolutionay proteins with machine learning models. I am also a collegiate varisty baseball coach at Oberlin College helping pitchers imrpove their biomechanics through mobility and strength trainig programs.
                 </p>
               </div>
             </div>
@@ -89,9 +89,20 @@ export default function About() {
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="text-gray-600">☕ Coffee enthusiast</span>
+                  <span className="text-gray-600">♣️ Poker Player</span>
                 </div>
               </div>
+            </div>
+
+            {/* Testimony Box */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 mt-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Testimonials</h3>
+                <div className="space-y-4 text-gray-600">
+                  <blockquote className="italic border-l-4 border-blue-500 pl-4">
+                    "Yongwoo quickly adapted to our work environment and took on complex data engineering tasks with enthusiasm and determination. His ability to process, analyze, and extract meaningful insights from large datasets was truly impressive. He showcased strong programming skills, particularly in data manipulation and visualization, which helped our team make informed decisions based on data-driven insights. Furthermore, his attention to detail and commitment to accuracy ensured the integrity of our data models and reports.""
+                    <span className="block mt-2 font-semibold text-gray-900">— Neevan Miglani, CEO SplashBI</span>
+                  </blockquote>
+                </div>
             </div>
           </div>
 
@@ -99,7 +110,7 @@ export default function About() {
           <div className="space-y-8">
             {/* Skills */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Technical Skills</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Technical Skills (Internship || Projects)</h3>
               <div className="space-y-4">
                 {skills.map((skill, index) => (
                   <div key={index} className="group">
@@ -127,7 +138,14 @@ export default function About() {
                     <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-500 rounded-full"></div>
                     <div className="pb-6">
                       <h4 className="font-semibold text-lg text-gray-900">{exp.title}</h4>
-                      <p className="text-blue-600 font-medium mb-1">{exp.company}</p>
+                      <a 
+                      href = {exp.company_url}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-blue-600 no-underline"
+                      >
+                      {exp.company}
+                      </a>
                       <p className="text-sm text-gray-500 mb-2">{exp.period}</p>
                       <p className="text-gray-600">{exp.description}</p>
                     </div>
