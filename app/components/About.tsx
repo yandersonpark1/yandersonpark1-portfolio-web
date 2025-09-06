@@ -1,16 +1,31 @@
 'use client'
+import Image from 'next/image'
 
 export default function About() {
-  const skills = [
-    { name: "Python", level: 100, color: "bg-blue-500" },
-    { name: "Java", level: 100, color: "bg-red-500" },
-    { name: "JavaScript", level: 100, color: "bg-yellow-500" },
-    { name: "TypeScript", level: 75, color: "bg-blue-600" },
-    { name: "Next.js", level: 75, color: "bg-cyan-200" },
-    { name: "React", level: 50, color: "bg-cyan-700" },
-    { name: "Tailwind CSS", level: 50, color: "bg-cyan-500" },
-    { name: "SQL", level: 100, color: "bg-green-500" },
-  ]
+  const techStack = {
+  languages: [
+    { name: "Python", icon: "/icons/Python.png", color: "bg-blue-500" },
+    { name: "Java", icon: "/icons/java.png", color: "bg-red-900" },
+    { name: "JavaScript", icon: "/icons/javaScript.png", color: "bg-yellow-600" },
+    { name: "TypeScript", icon: "/icons/typeScript.png", color: "bg-blue-600" },
+    { name: "SQL", icon: "/icons/sql.png", color: "bg-orange-300" },
+  ],
+  frontend: [
+    { name: "React", icon: "/icons/react.png", color: "bg-blue-700" },
+    { name: "Next.js", icon: "/icons/next-js.png", color: "bg-gray-500" },
+    { name: "Tailwind CSS", icon: "/icons/tailwind.png", color: "bg-cyan-400" },
+  ],
+  backend: [
+    { name: "MongoDB", icon: "/icons/MongoDB.png", color: "bg-green-700" },
+    { name: "MySQL", icon: "/icons/mysQL.png", color: "bg-blue-300" },
+  ],
+  tools: [
+    { name: "Docker", icon: "/icons/docker.png", color: "bg-blue-300" },
+    { name: "AWS", icon: "/icons/aws.png", color: "bg-orange-400" },
+    { name: "Git", icon: "/icons/git.png", color: "bg-red-900" },
+  ],
+};
+
 
   const experiences = [
     {
@@ -35,6 +50,27 @@ export default function About() {
       description: "I worked in SplashBI's HR analytics team developing and maintaining automated data pipelines that transformed HR data from Oracle Cloud and MySQL into analytics-ready formats. I designed and optimized SQL database schemas to track key HR metrics like retention, turnover, and performance, and developed RESTful APIs to connect backend data with internal dashboards. By automating queries and Excel workflows, I reduced manual reporting time for enterprise clients by nearly 50%. I also created scalable data models to uncover growth opportunities and presented improvements in biweekly demos to stakeholders from multiple enterprise companies."
     },
   ]
+  
+  type Tech = {
+    name: string;
+    icon: string;
+    color: string
+  };
+
+  const TechBadge: React.FC<{ tech: Tech }> = ({ tech }) => (
+  <div
+    className={`flex items-center space-x-2 ${tech.color} text-white px-3 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg cursor-default`}
+  >
+    <Image
+      src={tech.icon}
+      alt={tech.name}
+      width={20}
+      height={20}
+      className="object-contain"
+    />
+    <span>{tech.name}</span>
+  </div>
+);
 
 
   return (
@@ -70,26 +106,48 @@ export default function About() {
                 </p>
               </div>
             </div>
-
-            {/* Personal Details */}
+          
+            {/* Tech Stack */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Facts</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-gray-600">📍 Atlanta, GA </span>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Tech Stack</h3>
+              
+              {/* Languages */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">Languages</h4>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.languages.map((tech, index) => (
+                    <TechBadge key={index} tech={tech} />
+                  ))}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-600">💼 Available for work</span>
+              </div>
+
+              {/* Frontend */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">Frontend</h4>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.frontend.map((tech, index) => (
+                    <TechBadge key={index} tech={tech} />
+                  ))}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-gray-600">🎓 Computer Science and Biology</span>
+              </div>
+
+              {/* Backend */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">Backend & Database</h4>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.backend.map((tech, index) => (
+                    <TechBadge key={index} tech={tech} />
+                  ))}
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                  <span className="text-gray-600">♣️ Poker Player</span>
+              </div>
+
+              {/* Tools */}
+              <div>
+                <h4 className="text-lg font-semibold text-gray-800 mb-3">Tools & Platforms</h4>
+                <div className="flex flex-wrap gap-2">
+                  {techStack.tools.map((tech, index) => (
+                    <TechBadge key={index} tech={tech} />
+                  ))}
                 </div>
               </div>
             </div>
@@ -106,28 +164,30 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Column - Skills & Experience */}
           <div className="space-y-8">
-            {/* Skills */}
+          {/* Personal Details */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Technical Skills (Internship || Projects)</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Quick Facts</h3>
               <div className="space-y-4">
-                {skills.map((skill, index) => (
-                  <div key={index} className="group">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="font-medium text-gray-700">{skill.name}</span>
-                      <span className="text-sm text-gray-500">{skill.level}%</span>
-                    </div>
-                    <div className="w-full bg-gray-200 rounded-full h-2">
-                      <div 
-                        className={`h-2 rounded-full ${skill.color} transition-all duration-1000 ease-out group-hover:scale-105`}
-                        style={{ width: `${skill.level}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-gray-600">📍 Atlanta, GA </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-600">💼 Available for work</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span className="text-gray-600">🎓 Computer Science and Biology</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
+                  <span className="text-gray-600">⚾️ Collegiate BSBL Coach</span>
+                </div>
               </div>
             </div>
+
 
             {/* Experience Timeline */}
             <div className="bg-white rounded-2xl shadow-xl p-8">
