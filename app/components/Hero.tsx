@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 
 export default function Hero() {
@@ -7,6 +7,18 @@ export default function Hero() {
   const [displayedText, setDisplayedText] = useState('')
   const [isTyping, setIsTyping] = useState(true)
   const [charIndex, setCharIndex] = useState(0)
+
+  const raindrops = useMemo(
+    () =>
+      [...Array(20)].map((_, i) => ({
+        id: i,
+        left: `${Math.random() * 100}%`,
+        duration: `${Math.random() * 2 + 2}s`,
+        delay: `${Math.random() * 5}s`,
+        height: `${Math.random() * 20 + 10}px`,
+      })),
+    []
+  );
 
   // Array of roles that will rotate
   const roles = [
@@ -71,20 +83,20 @@ export default function Hero() {
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-600 animate-gradient-x"></div>
-             
-      {/* Floating particles effect */}
+
+      {/* Raindrop effect */} 
       <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
+        {raindrops.map((drop) => (
           <div
-            key={i}
-            className={`absolute bg-white/10 rounded-full animate-float-${i % 3 + 1}`}
+            key={drop.id}
+            className="raindrop"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              width: `${Math.random() * 100 + 50}px`,
-              height: `${Math.random() * 100 + 50}px`,
+              left: drop.left,
+              animationDuration: drop.duration,
+              animationDelay: drop.delay,
+              height: drop.height,
             }}
-          ></div>
+          />
         ))}
       </div>
        
