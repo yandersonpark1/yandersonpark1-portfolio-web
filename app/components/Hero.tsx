@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Hero() {
   const [currentRole, setCurrentRole] = useState(0)
@@ -90,9 +91,15 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl">
         <div className="mb-8">
-          {/* Profile image placeholder */}
-          <div className="w-32 h-32 mx-auto mb-8 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center text-4xl font-bold border-4 border-white/30">
-            YN
+          {/* Profile image*/}
+          <div className="w-32 h-32 mx-auto mb-8 rounded-full border-4 border-white/30 overflow-hidden">
+            <Image 
+              src="/profile/profile.jpeg" 
+              alt="Profile Image" 
+              width={128} 
+              height={128} 
+              className="w-full h-full object-cover"
+            />
           </div>
                      
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
