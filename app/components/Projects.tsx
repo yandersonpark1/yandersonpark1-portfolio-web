@@ -1,89 +1,78 @@
 'use client'
 import { useState } from 'react'
+import { ReactNode } from 'react'
+import Image from 'next/image'
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('all')
   
+  type ExternalLinkProps = {
+    href: string;
+    children: ReactNode;
+    className?: string;
+  };
+  
+  // Reusable external link wrapper
+  const ExternalLink = ({ href, children, className }: ExternalLinkProps) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={className}
+    >
+      {children}
+    </a>
+  )
+
+
   const projects = [
     {
       id: 1,
       title: "Web-Portfolio",
-      description: "A full-stack online store built with React and Node.js, featuring user authentication, payment integration, and admin dashboard.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Tailwind CSS", "React", "Node.js", "TypeScript"],
-      category: "frontend",
+      description: "My personal web-portfolio built with Next.js, TailwindCSS, and React components",
+      image: "/projects_photo/web-portfolio.png",
+      technologies: ["Tailwind CSS", "React", "Next.js", "TypeScript"],
+      categories: ["frontend"],
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/yandersonpark1/yandersonpark1-portfolio-web",
       featured: true
     },
     {
       id: 2,
       title: "Baseball Data Analysis and Coaching Tool",
-      description: "A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "TypeScript", "Tailwind", "Firebase"],
-      category: "frontend",
+      description: "A ETE baseball data analysis pipeline for anlyzing pitcher's pitches beyond basic metrics. Currently working on connecting the frontend to the backend API.",
+      image: "/projects_photo/pitching_project.jpeg",
+      technologies: ["Python", "Pandas", "MongodDB", "FastAPI", "React"],
+      categories: ["fullstack"],
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/yandersonpark1/BSBL-Scout",
       featured: true
     },
+
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "A responsive weather application that displays current conditions, forecasts, and weather maps using external APIs.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React", "API Integration", "Chart.js"],
-      category: "frontend",
+      title: "Machine Learning Protein Design Data Analysis",
+      description: "A data analysis pipeline for analyzing protein design results from various ML models including AlphaFold3 and LigandMPNN.",
+      image: "/projects_photo/protein_project.webp",
+      technologies: ["Python", "Pandas", "AlphaFold3", "PyMOL", "LigandMPNN"],
+      categories: ["biochemistry", "ai"],
       demoUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/yandersonpark1/Protein-Design-Research-",
       featured: false
     },
-    {
-      id: 4,
-      title: "Blog CMS",
-      description: "A content management system for bloggers with markdown support, SEO optimization, and analytics dashboard.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Next.js", "Prisma", "PostgreSQL"],
-      category: "fullstack",
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      id: 5,
-      title: "Mobile Fitness App",
-      description: "A React Native app for tracking workouts, nutrition, and fitness goals with social features and progress analytics.",
-      image: "/api/placeholder/400/250",
-      technologies: ["React Native", "Redux", "Node.js"],
-      category: "mobile",
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: false
-    },
-    {
-      id: 6,
-      title: "AI Chatbot Interface",
-      description: "An intelligent chatbot interface with natural language processing and integration with various AI services.",
-      image: "/api/placeholder/400/250",
-      technologies: ["Python", "OpenAI API", "Flask", "React"],
-      category: "ai",
-      demoUrl: "#",
-      githubUrl: "#",
-      featured: true
-    }
   ]
 
   const categories = [
-    { id: 'all', label: 'All Projects', count: projects.length },
-    { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.category === 'frontend').length },
-    { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.category === 'fullstack').length },
-    { id: 'ai', label: 'AI/ML', count: projects.filter(p => p.category === 'ai').length },
-    { id: 'biochemistry', label: 'BioChemistry', count: projects.filter(p => p.category === 'biochemistry').length },
+  { id: 'all', label: 'All Projects', count: projects.length },
+  { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.categories.includes('frontend')).length },
+  { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.categories.includes('fullstack')).length },
+  { id: 'ai', label: 'AI/ML', count: projects.filter(p => p.categories.includes('ai')).length },
+  { id: 'biochemistry', label: 'BioChemistry', count: projects.filter(p => p.categories.includes('biochemistry')).length },
   ]
 
   const filteredProjects = activeFilter === 'all' 
     ? projects 
-    : projects.filter(project => project.category === activeFilter)
+    : projects.filter(project => project.categories.includes(activeFilter))
 
   return (
     <section id="projects" className="py-20 bg-white scroll-mt-16">
@@ -139,26 +128,28 @@ export default function Projects() {
 
               {/* Project Image */}
               <div className="relative overflow-hidden h-48 bg-gradient-to-br from-gray-100 to-gray-200">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-600/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-lg font-medium">
-                  {project.title}
-                </div>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover"
+                />
                 
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                  <a
+                  <ExternalLink
                     href={project.demoUrl}
                     className="bg-white text-gray-900 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors"
                   >
                     Live Demo
-                  </a>
+                  </ExternalLink>
                   
-                  <a
+                  <ExternalLink
                     href={project.githubUrl}
                     className="bg-transparent border-2 border-white text-white px-4 py-2 rounded-lg font-medium hover:bg-white hover:text-gray-900 transition-colors"
                   >
                     GitHub
-                  </a>
+                  </ExternalLink>
                 </div>
               </div>
 
@@ -193,15 +184,19 @@ export default function Projects() {
             Interested in seeing more of my work?
           </p>
           
-          <a
+          <ExternalLink
             href="https://github.com/yandersonpark1"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-full hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 hover:shadow-xl"
           >
             View All Projects on GitHub
             <svg className="ml-2 w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
+              <path
+                fillRule="evenodd"
+                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
             </svg>
-          </a>
+          </ExternalLink>
         </div>
       </div>
     </section>
