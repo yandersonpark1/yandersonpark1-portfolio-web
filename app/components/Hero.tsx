@@ -145,7 +145,9 @@ export default function Hero() {
             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
           </button>
                      
-          <button className="px-8 py-4 border-2 border-gray-300 text-gray-100 rounded-full font-semibold text-lg hover:bg-gray-100 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
+          <button 
+            onClick={() => scrollToSection('contact')} 
+            className="px-8 py-4 border-2 border-gray-300 text-gray-100 rounded-full font-semibold text-lg hover:bg-gray-100 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
             Get In Touch
           </button>
         </div>
