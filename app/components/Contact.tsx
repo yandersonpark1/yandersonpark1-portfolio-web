@@ -66,7 +66,8 @@ export default function Contact() {
   const socialLinks = [
     { name: 'GitHub', url: 'https://github.com/yandersonpark1', icon: '⚡' },
     { name: 'LinkedIn', url: 'https://linkedin.com/in/yongwooandersonpark', icon: '💼' },
-    { name: 'Portfolio', url: '#', icon: '🌐' }
+    { name: 'Portfolio', url: '#', icon: '🌐' },
+    { name: 'Instagram', url: 'https://www.instagram.com/a._.park1/', icon: '📸' }
   ]
 
   return (
