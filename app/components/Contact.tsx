@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import emailjs from 'emailjs-com'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -22,15 +23,24 @@ export default function Contact() {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission (you'll replace this with real form handling later)
-    setTimeout(() => {
-      setSubmitStatus('success')
-      setIsSubmitting(false)
-      setFormData({ name: '', email: '', subject: '', message: '' })
+    try {
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
+      )
       
-      // Clear success message after 5 seconds
+      console.log(result.text)
+      setSubmitStatus('success')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+    } catch (error) {
+      console.error(error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
       setTimeout(() => setSubmitStatus(''), 5000)
-    }, 2000)
+    }
   }
 
   const contactInfo = [
@@ -39,12 +49,6 @@ export default function Contact() {
       title: 'Email',
       details: 'everydayap3@gmail.com',
       action: 'mailto:everydayap3@gmail.com'
-    },
-    {
-      icon: '📱',
-      title: 'Phone',
-      details: '+1 (678) 622-6313',
-      action: 'tel:+16786226313'
     },
     {
       icon: '📍',
@@ -104,7 +108,7 @@ export default function Contact() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your Name *
+                    Name *
                   </label>
                   <input
                     type="text"
@@ -146,7 +150,7 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors"
-                  placeholder="Organic Chemistry Project Inquiry"
+                  placeholder="Large scale distribution project"
                 />
               </div>
 
