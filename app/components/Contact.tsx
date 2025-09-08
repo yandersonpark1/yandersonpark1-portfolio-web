@@ -24,18 +24,17 @@ export default function Contact() {
     setIsSubmitting(true)
     
     try {
-      const result = await emailjs.send(
+      await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         formData,
         process.env.NEXT_PUBLIC_EMAILJS_USER_ID!
       )
-      
-      console.log(result.text)
+
       setSubmitStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
     } catch (error) {
-      console.error(error)
+      console.error('Email send failed', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
