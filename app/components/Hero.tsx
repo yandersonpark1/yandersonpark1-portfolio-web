@@ -1,4 +1,5 @@
 'use client'
+
 import { useState, useEffect, useMemo } from 'react'
 import Image from 'next/image'
 
@@ -20,54 +21,47 @@ export default function Hero() {
     []
   );
 
-  // Array of roles that will rotate
-  const roles = [
-    "Full Stack Software Engineer",
-    "Data Engineer", 
-    "Machine Learning Engineer",
-    "BioChemist"
-  ]
+  // Roles wrapped in useMemo
+  const roles = useMemo(
+    () => [
+      "Full Stack Software Engineer",
+      "Data Engineer", 
+      "Machine Learning Engineer",
+      "BioChemist"
+    ],
+    []
+  );
 
   useEffect(() => {
-    const currentText = roles[currentRole]
-    
+    const currentText = roles[currentRole];
+
     if (isTyping) {
-      // Typing phase
       if (charIndex < currentText.length) {
         const timeout = setTimeout(() => {
           setDisplayedText(currentText.slice(0, charIndex + 1))
           setCharIndex(charIndex + 1)
-        }, 100) // Typing speed
-        
+        }, 100)
         return () => clearTimeout(timeout)
       } else {
-        // Finished typing, wait before deleting
-        const timeout = setTimeout(() => {
-          setIsTyping(false)
-        }, 2000) // Pause before deleting
-        
+        const timeout = setTimeout(() => setIsTyping(false), 2000)
         return () => clearTimeout(timeout)
       }
     } else {
-      // Deleting phase
       if (charIndex > 0) {
         const timeout = setTimeout(() => {
           setDisplayedText(currentText.slice(0, charIndex - 1))
           setCharIndex(charIndex - 1)
-        }, 50) // Deleting speed (faster than typing)
-        
+        }, 50)
         return () => clearTimeout(timeout)
       } else {
-        // Finished deleting, move to next role
         const timeout = setTimeout(() => {
           setCurrentRole((prev) => (prev + 1) % roles.length)
           setIsTyping(true)
-        }, 500) // Pause before next word
-        
+        }, 500)
         return () => clearTimeout(timeout)
       }
     }
-  }, [currentRole, charIndex, isTyping, roles])
+  }, [currentRole, charIndex, isTyping]) // roles removed from dependencies
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
@@ -115,11 +109,10 @@ export default function Hero() {
           </div>
                      
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold mb-6 leading-tight">
-            Hey, I'm{' '}
-          <span className="bg-gradient-to-r from-blue-500 to-green-200 bg-clip-text text-transparent">
-            Anderson Park
-          </span>
-
+            {`Hey, I'm `}
+            <span className="bg-gradient-to-r from-blue-500 to-green-200 bg-clip-text text-transparent">
+              Anderson Park
+            </span>
           </h1>
                      
           {/* Typewriter role text */}
@@ -131,8 +124,7 @@ export default function Hero() {
           </div>
                      
           <p className="text-lg sm:text-xl mb-12 opacity-90 max-w-2xl mx-auto leading-relaxed">
-            I engineer and design, user-friendly web applications transforming data into actionable 
-            insights solving real world problems.
+            {`I engineer and design user-friendly web applications transforming data into actionable insights solving real world problems.`}
           </p>
         </div>
          
@@ -141,14 +133,14 @@ export default function Hero() {
           <button 
             onClick={() => scrollToSection('projects')} 
             className="group px-8 py-4 bg-gray-100 text-gray-900 rounded-full font-semibold text-lg hover:bg-cyan-500 hover:text-gray-900 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-            View My Work
+            {`View My Work`}
             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
           </button>
                      
           <button 
             onClick={() => scrollToSection('contact')} 
             className="px-8 py-4 border-2 border-gray-300 text-gray-100 rounded-full font-semibold text-lg hover:bg-gray-100 hover:text-gray-900 transition-all duration-300 transform hover:scale-105">
-            Get In Touch
+            {`Get In Touch`}
           </button>
         </div>
       </div>
