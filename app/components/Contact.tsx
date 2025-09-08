@@ -34,7 +34,7 @@ export default function Contact() {
       setSubmitStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
     } catch (error) {
-      console.error('Email send failed', error)
+      console.error("Email send failed", error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -80,8 +80,7 @@ export default function Contact() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            I'm always interested in new opportunities and interesting projects. 
-            Whether you have a question or just want to say hi, I'll do my best to get back to you!
+            {"I'm always interested in new opportunities and interesting projects. Whether you have a question or just want to say hi, I'll do my best to get back to you!"}
           </p>
         </div>
 
@@ -97,7 +96,7 @@ export default function Contact() {
                   <div className="text-green-400 mr-3">✅</div>
                   <div>
                     <h4 className="text-green-800 font-medium">Message sent successfully!</h4>
-                    <p className="text-green-600 text-sm">Thank you for reaching out. I'll get back to you soon.</p>
+                    <p className="text-green-600 text-sm">{"Thank you for reaching out. I'll get back to you soon."}</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +183,7 @@ export default function Contact() {
                     Sending...
                   </div>
                 ) : (
-                  'Send Message'
+                  "Send Message"
                 )}
               </button>
             </form>
@@ -216,9 +215,9 @@ export default function Contact() {
 
             {/* Social Links */}
             <div className="bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl shadow-xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-6">Let's Connect</h3>
+              <h3 className="text-2xl font-bold mb-6">{"Let's Connect"}</h3>
               <p className="mb-6 opacity-90">
-                Follow me on social media for updates on my latest projects and tech insights.
+                {"Follow me on social media for updates on my latest projects and tech insights."}
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (
