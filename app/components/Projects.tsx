@@ -24,7 +24,6 @@ export default function Projects() {
     </a>
   )
 
-
   const projects = [
     {
       id: 1,
@@ -40,7 +39,7 @@ export default function Projects() {
     {
       id: 2,
       title: "Baseball Data Analysis and Coaching Tool",
-      description: "A ETE baseball data analysis pipeline for anlyzing pitcher's pitches beyond basic metrics. Currently working on connecting the frontend to the backend API.",
+      description: "A ETE baseball data analysis pipeline for analyzing pitcher&apos;s pitches beyond basic metrics. Currently working on connecting the frontend to the backend API.",
       image: "/projects_photo/pitching_project.jpeg",
       technologies: ["Python", "Pandas", "MongodDB", "FastAPI", "React"],
       categories: ["fullstack"],
@@ -48,7 +47,6 @@ export default function Projects() {
       githubUrl: "https://github.com/yandersonpark1/BSBL-Scout",
       featured: true
     },
-
     {
       id: 3,
       title: "Machine Learning Protein Design Data Analysis",
@@ -63,11 +61,11 @@ export default function Projects() {
   ]
 
   const categories = [
-  { id: 'all', label: 'All Projects', count: projects.length },
-  { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.categories.includes('frontend')).length },
-  { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.categories.includes('fullstack')).length },
-  { id: 'ai', label: 'AI/ML', count: projects.filter(p => p.categories.includes('ai')).length },
-  { id: 'biochemistry', label: 'BioChemistry', count: projects.filter(p => p.categories.includes('biochemistry')).length },
+    { id: 'all', label: 'All Projects', count: projects.length },
+    { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.categories.includes('frontend')).length },
+    { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.categories.includes('fullstack')).length },
+    { id: 'ai', label: 'AI/ML', count: projects.filter(p => p.categories.includes('ai')).length },
+    { id: 'biochemistry', label: 'BioChemistry', count: projects.filter(p => p.categories.includes('biochemistry')).length },
   ]
 
   const filteredProjects = activeFilter === 'all' 
@@ -84,8 +82,8 @@ export default function Projects() {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Here's a showcase of my recent work. Each project represents a unique challenge 
-            and demonstrates different aspects of my development skills.
+            {`Here's a showcase of my recent work. Each project represents a unique challenge 
+            and demonstrates different aspects of my development skills.`}
           </p>
         </div>
 
@@ -181,7 +179,7 @@ export default function Projects() {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <p className="text-lg text-gray-600 mb-6">
-            Interested in seeing more of my work?
+            {`Interested in seeing more of my work?`}
           </p>
           
           <ExternalLink
