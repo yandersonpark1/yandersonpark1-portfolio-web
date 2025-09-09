@@ -6,8 +6,8 @@ export default function About() {
     languages: [
       { name: "Python", icon: "/icons/Python.png", color: "bg-blue-500" },
       { name: "Java", icon: "/icons/java.png", color: "bg-red-900" },
-      { name: "JavaScript", icon: "/icons/javaScript.png", color: "bg-yellow-600" },
-      { name: "TypeScript", icon: "/icons/typeScript.png", color: "bg-blue-600" },
+      { name: "JavaScript", icon: "/icons/javascript.png", color: "bg-yellow-600" },
+      { name: "TypeScript", icon: "/icons/typescript.png", color: "bg-blue-600" },
       { name: "SQL", icon: "/icons/sql.png", color: "bg-orange-300" },
     ],
     frontend: [
@@ -16,8 +16,8 @@ export default function About() {
       { name: "Tailwind CSS", icon: "/icons/tailwind.png", color: "bg-cyan-400" },
     ],
     backend: [
-      { name: "MongoDB", icon: "/icons/MongoDB.png", color: "bg-green-700" },
-      { name: "MySQL", icon: "/icons/mysQL.png", color: "bg-blue-300" },
+      { name: "MongoDB", icon: "/icons/mongodb.png", color: "bg-green-700" },
+      { name: "MySQL", icon: "/icons/mysql.png", color: "bg-blue-300" },
     ],
     tools: [
       { name: "Docker", icon: "/icons/docker.png", color: "bg-blue-300" },
