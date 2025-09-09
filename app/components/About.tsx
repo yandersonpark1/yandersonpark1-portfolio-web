@@ -39,7 +39,7 @@ export default function About() {
       company: "Rosetta Commons, Johns Hopkins University",
       period: "May 2025 - Aug 2025",
       company_url: "https://rosettacommons.org/",
-      description: "Built and optimized a computational protein design pipeline using ML models such as RFDiffusionAA, LigandMPNN, Rosetta Libraries, and AlphaFold3, improving computational confidence metrics by roughly 4% per iteration. I automated large-scale protein design workflows with SLURM and Bash scripts on an HPC cluster, processing thousands of structures and sequences while reducing runtime by approximately 10%. I applied PyTorch-based ML techniques and statistical analyses to evaluate and improve binder affinity by up to 1000%, leveraging HPC resources to scale iterative design loops and enhance reproducibility and throughput. I also presented a research poster at the Summer Rosetta Conference, showcasing advancements in ML-driven protein design."
+      description: "Built and optimized a computational protein design pipeline using ML models such as RFDiffusionAA, LigandMPNN, Rosetta Libraries, and AlphaFold3, improving computational confidence metrics by roughly 4% per iteration. I automated large-scale protein design workflows with SLURM and Bash scripts on an HPC cluster, processing thousands of structures and sequences while reducing runtime by approximately 10%. I applied Machine Learning models and statistical analyses to evaluate and improve binder affinity by up to 1000%, leveraging HPC resources to scale iterative design loops and enhance reproducibility and throughput. I also presented a research poster at the Summer Rosetta Conference, showcasing advancements in ML-driven protein design."
     },
     {
       title: "BackEnd Software Engineer",
