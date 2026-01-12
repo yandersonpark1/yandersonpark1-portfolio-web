@@ -8,6 +8,8 @@ export default function About() {
       { name: "Java", icon: "/icons/java.png", color: "bg-red-900" },
       { name: "JavaScript", icon: "/icons/javascript.png", color: "bg-yellow-600" },
       { name: "TypeScript", icon: "/icons/typescript.png", color: "bg-blue-600" },
+      { name: "Rust", icon: "/icons/rust.png", color: "bg-gray-700" },
+      { name: "Bash", icon: "/icons/bash.png", color: "bg-gray-400" },
       { name: "SQL", icon: "/icons/sql.png", color: "bg-orange-300" },
     ],
     frontend: [
@@ -16,13 +18,19 @@ export default function About() {
       { name: "Tailwind CSS", icon: "/icons/tailwind.png", color: "bg-cyan-400" },
     ],
     backend: [
-      { name: "MongoDB", icon: "/icons/mongodb.png", color: "bg-green-700" },
+      { name: "FastAPI", icon: "/icons/fastapi.png", color: "bg-green-800" },
+      { name: "Node.js", icon: "/icons/nodejs.jpg", color: "bg-green-600" },
+      { name: "MongoDB", icon: "/icons/mongodb.png", color: "bg-green-400" },
       { name: "MySQL", icon: "/icons/mysql.png", color: "bg-blue-300" },
+      { name: "PostgreSQL", icon: "/icons/postgresql.png", color: "bg-blue-700" },
+      { name: "Oracle", icon: "/icons/oracle.png", color: "bg-red-600" },
     ],
     tools: [
       { name: "Docker", icon: "/icons/docker.png", color: "bg-blue-300" },
       { name: "AWS", icon: "/icons/aws.png", color: "bg-orange-400" },
       { name: "Git", icon: "/icons/git.png", color: "bg-red-900" },
+      { name: "Linux", icon: "/icons/linux.webp", color: "bg-black" },
+      { name: "Slurm", icon: "/icons/slurm.jpg", color: "bg-blue-500" },
     ],
   };
 
@@ -35,7 +43,7 @@ export default function About() {
       description: "I designed and implemented an end-to-end data pipeline for pitching performance, automating data ingestion from the cloud with daily cron jobs to ensure timely updates. I integrated FastAPI with Rapsodo’s REST API using secure API keys to fetch and persist pitch data into MongoDB, and built backend services that allow users to query and analyze performance on-demand. To support real-time analytics, I developed Python scripts that process and classify pitch data, generating interactive visualizations that contributed to a 6.8% improvement in team pitching success. On the frontend, I built a React dashboard with interactive charts and filters to make performance insights accessible and actionable. I also containerized the system with Docker and deployed it on AWS, enabling scalable, cloud-based access for the team."
     },
     {
-      title: "Machine Learning Computational Biology REU Intern",
+      title: "Machine Learning Engineer Intern",
       company: "Rosetta Commons, Johns Hopkins University",
       period: "May 2025 - Aug 2025",
       company_url: "https://rosettacommons.org/",
