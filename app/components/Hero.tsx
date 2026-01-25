@@ -9,17 +9,16 @@ export default function Hero() {
   const [isTyping, setIsTyping] = useState(true)
   const [charIndex, setCharIndex] = useState(0)
 
-  const raindrops = useMemo(
-    () =>
-      [...Array(20)].map((_, i) => ({
-        id: i,
-        left: `${Math.random() * 100}%`,
-        duration: `${Math.random() * 2 + 2}s`,
-        delay: `${Math.random() * 5}s`,
-        height: `${Math.random() * 20 + 10}px`,
-      })),
-    []
-  );
+  type Raindrop = {
+    id: number;
+    left: string;
+    duration: string;
+    delay: string;
+    height: string;
+  };
+
+  const [raindrops, setRaindrops] = useState<Raindrop[]>([]);
+
 
   // Roles wrapped in useMemo
   const roles = useMemo(
@@ -31,6 +30,19 @@ export default function Hero() {
     ],
     []
   );
+
+  useEffect(() => {
+    const drops = [...Array(20)].map((_, i) => ({
+      id: i,
+      left: `${Math.random() * 100}%`,
+      duration: `${Math.random() * 2 + 2}s`,
+      delay: `${Math.random() * 5}s`,
+      height: `${Math.random() * 20 + 10}px`,
+    }));
+
+  setRaindrops(drops);
+}, []);
+
 
   useEffect(() => {
     const currentText = roles[currentRole];

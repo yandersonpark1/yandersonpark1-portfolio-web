@@ -39,11 +39,11 @@ export default function Projects() {
     {
       id: 2,
       title: "Baseball Data Analysis and Coaching Tool",
-      description: "A ETE baseball data analysis pipeline for analyzing pitcher&apos;s pitches beyond basic metrics. Currently working on connecting the frontend to the backend API.",
+      description: "A ETL FastAPI microservice baseball data analysis pipeline for analyzing pitchers' pitches beyond basic metrics giving meaningful insights.",
       image: "/projects_photo/pitching_project.jpeg",
       technologies: ["Python", "Pandas", "MongodDB", "FastAPI", "React"],
       categories: ["fullstack"],
-      demoUrl: "#",
+      demoUrl: "https://www.youtube.com/watch?v=fHkdFIOzQ_w",
       githubUrl: "https://github.com/yandersonpark1/BSBL-Scout",
       featured: true
     },
