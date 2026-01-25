@@ -36,25 +36,32 @@ export default function About() {
 
   const experiences = [
     {
-      title: "Full Stack Software Engineer",
-      company: "Oberlin College",
-      period: "Jan 2025 - Current",
-      company_url: "https://www.oberlin.edu/",
-      description: "I designed and implemented an end-to-end data pipeline for pitching performance, automating data ingestion from the cloud with daily cron jobs to ensure timely updates. I integrated FastAPI with Rapsodo’s REST API using secure API keys to fetch and persist pitch data into MongoDB, and built backend services that allow users to query and analyze performance on-demand. To support real-time analytics, I developed Python scripts that process and classify pitch data, generating interactive visualizations that contributed to a 6.8% improvement in team pitching success. On the frontend, I built a React dashboard with interactive charts and filters to make performance insights accessible and actionable. I also containerized the system with Docker and deployed it on AWS, enabling scalable, cloud-based access for the team."
+      title: "Machine Learning Engineering Intern",
+      company: "Amazing Energy Solutions",
+      period: "January 2026 - Present",
+      company_url: "https://theamazingenergy.com/",
+      description: ["Designing and implementing data pipelines to support ML training, evaluation, and inference workflows", "Building automated ingestion and transformation pipelines to convert raw data into model-ready datasets"]
     },
     {
-      title: "Machine Learning Engineer Intern",
-      company: "Rosetta Commons, Johns Hopkins University",
+      title: "Full Stack Software Engineer",
+      company: "Oberlin College",
+      period: "Jan 2025 - May 2025; Sept 2025 - Dec 2025",
+      company_url: "https://www.oberlin.edu/",
+      description: ["Delivered an end-to-end analytics platform supporting a 6.8% improvement in athletic performance through actionable insights", "Engineered a high-concurrency FastAPI microservice processing real-time telemetry, serving 100+ daily requests at <120 ms average latency", "Automated cloud data ingestion and transformation pipelines, increasing data availability from weekly to daily", "Built interactive React dashboards with filters and visualizations to support real-time analysis by coaches and staff", "Containerized services with Docker and initiated deployment on AWS, enabling scalable access and future expansion"]
+    },
+    {
+      title: "Machine Learning Engineering Intern",
+      company: "Johns Hopkins University / Rosetta Commons",
       period: "May 2025 - Aug 2025",
       company_url: "https://rosettacommons.org/",
-      description: "Built and optimized a computational protein design pipeline using ML models such as RFDiffusionAA, LigandMPNN, Rosetta Libraries, and AlphaFold3, improving computational confidence metrics by roughly 4% per iteration. I automated large-scale protein design workflows with SLURM and Bash scripts on an HPC cluster, processing thousands of structures and sequences while reducing runtime by approximately 10%. I applied Machine Learning models and statistical analyses to evaluate and improve binder affinity by up to 1000%, leveraging HPC resources to scale iterative design loops and enhance reproducibility and throughput. I also presented a research poster at the Summer Rosetta Conference, showcasing advancements in ML-driven protein design."
+      description: ["Built an automated ML-driven molecular design pipeline in Python, improving drug design confidence metrics by ~4% per iteration", "Leveraged HPC/GPU infrastructure to improve reproducibility, fault tolerance, and throughput of large-scale experiments", "Implemented distributed GPU job scheduling using SLURM and Bash, reducing end-to-end pipeline runtime by ~10%","Tuned and evaluated ML models, presenting results at SRC to improve predictive accuracy and downstream design outcomes"]
     },
     {
       title: "BackEnd Software Engineer",
       company: "SplashBI",
       period: "May 2024 - August 2024",
       company_url: "https://splashbi.com/",
-      description: "I worked in SplashBI’s HR analytics team developing and maintaining automated data pipelines that transformed HR data from Oracle Cloud and MySQL into analytics-ready formats. I designed and optimized SQL database schemas to track key HR metrics like retention, turnover, and performance, and developed RESTful APIs to connect backend data with internal dashboards. By automating queries and Excel workflows, I reduced manual reporting time for enterprise clients by nearly 50%. I also created scalable data models to uncover growth opportunities and presented improvements in biweekly demos to stakeholders from multiple enterprise companies."
+      description: ["Built automated ETL pipelines migrating Oracle Cloud and MySQL data into analytics schemas, cutting processing time by ~50%", "Designed relational SQL schemas and stored procedures, reducing KPI query latency by ~25%", "Developed and integrated REST APIs powering internal analytics dashboards for 8+ enterprise clients", "Collaborated with product and analytics teams to deploy backend services used in production environments"]
     },
   ]
 
@@ -100,13 +107,13 @@ export default function About() {
               <h3 className="text-2xl font-bold text-gray-900 mb-6">My Story</h3>
               <div className="space-y-4 text-gray-600 leading-relaxed">
                 <p>
-                  {"I began programming in college, where I initially struggled — even failing — but through persistence and practice I began to excel. Throughout my studies and career, I have built a strong foundation in computing, data analysis, and software development."}
+                  {"I began programming in college where I initially struggled, even failing, but through persistence and practice I began to excel. Through my academic career, thus far I have developed my programming skills through building projects in Python, Java, Rust, and Racket. Through my chemistry and biology coursework, I have gained a strong foundation in data analysis and scientific computing, which has fueled my passion for leveraging technology to solve complex problems. My unique background in both computer science and biochemistry has given me a creative design approach to any engineering problem."}
                 </p>
                 <p>
-                  {"Today, I specialize in building web applications that transform data into real-life insights, helping communities improve their decision-making. I love the challenge of turning complex problems into simple, elegant solutions, and I'm passionate about leaving my mark in this world through my work."}
+                  {"In my professional career, I have been blessed with the opportunity to gain valuable experience through 4 internships, one full time role as a SWE for my college's atheltic department, and a technical lead in a biotech startup. Through these experiences, I have learned how to apply my skills in real-world settings, collaborate with diverse teams, and continuously improve my craft. I love the challenge of turning complex problems into simple, elegant solutions, and I'm passionate about leaving my mark in this world through my work."}
                 </p>
                 <p>
-                  {"Outside of programming, I'm currently sidequesting as a computational biology researcher with the Goldman Lab at Oberlin College, engineering evolutionary proteins with machine learning models. I'm also a collegiate varsity baseball coach at Oberlin College, helping pitchers improve their biomechanics through mobility and strength training programs."}
+                  {"Outside of programming, I'm currently sidequesting as a computational biology researcher with the Goldman Lab at Oberlin College, engineering evolutionary proteins with machine learning models. I'm also a collegiate varsity baseball coach at Oberlin College, leading a team of 40 players and helping pitchers improve their biomechanics through mobility and strength training programs."}
                 </p>
               </div>
             </div>
@@ -175,15 +182,15 @@ export default function About() {
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <span className="text-gray-600">📍 Atlanta, GA </span>
+                  <span className="text-gray-600">📍 Atlanta, GA (willing to relocate)</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-gray-600">💼 Available for work</span>
+                  <span className="text-gray-600">💼 Looking for Internship Opportunities in ML or SWE</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <span className="text-gray-600">🎓 Computer Science and Biology</span>
+                  <span className="text-gray-600">🎓 Double Major in Computer Science + BioChemistry</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
@@ -210,7 +217,12 @@ export default function About() {
                         {exp.company}
                       </a>
                       <p className="text-sm text-gray-500 mb-2">{exp.period}</p>
-                      <p className="text-gray-600">{exp.description}</p>
+                      <ul className="list-disc list-inside space-y-1 text-gray-600">
+                        {exp.description.map((bullet, i) => (
+                          <li key={i}>{bullet}</li>
+                        ))}
+                      </ul>
+
                     </div>
                   </div>
                 ))}
