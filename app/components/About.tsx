@@ -45,7 +45,7 @@ export default function About() {
     {
       title: "Full Stack Software Engineer",
       company: "Oberlin College",
-      period: "Jan 2025 - May 2025; Sept 2025 - Dec 2025",
+      period: "Jan 2025 - May 2025, Sept 2025 - Dec 2025",
       company_url: "https://www.oberlin.edu/",
       description: ["Delivered an end-to-end analytics platform supporting a 6.8% improvement in athletic performance through actionable insights", "Engineered a high-concurrency FastAPI microservice processing real-time telemetry, serving 100+ daily requests at <120 ms average latency", "Automated cloud data ingestion and transformation pipelines, increasing data availability from weekly to daily", "Built interactive React dashboards with filters and visualizations to support real-time analysis by coaches and staff", "Containerized services with Docker and initiated deployment on AWS, enabling scalable access and future expansion"]
     },

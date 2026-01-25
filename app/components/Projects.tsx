@@ -30,39 +30,38 @@ export default function Projects() {
       title: "Web-Portfolio",
       description: "My personal web-portfolio built with Next.js, TailwindCSS, and React components",
       image: "/projects_photo/web-portfolio.png",
-      technologies: ["Tailwind CSS", "React", "Next.js", "TypeScript"],
-      categories: ["frontend"],
+      technologies: ["Tailwind CSS", "React", "Next.js", "TypeScript", "Vercel"],
+      categories: ["fullstack"],
       demoUrl: "#",
       githubUrl: "https://github.com/yandersonpark1/yandersonpark1-portfolio-web",
       featured: true
     },
     {
       id: 2,
-      title: "Baseball Data Analysis and Coaching Tool",
-      description: "A ETL FastAPI microservice baseball data analysis pipeline for analyzing pitchers' pitches beyond basic metrics giving meaningful insights.",
-      image: "/projects_photo/pitching_project.jpeg",
-      technologies: ["Python", "Pandas", "MongodDB", "FastAPI", "React"],
+      title: "Pitching Performance Analytics Platform",
+      description: "Built a full-stack ETL analytics platform that ingests raw CSV telemetry data, transforms it into structured metrics via a FastAPI microservice, and surfaces actionable performance insights through an interactive dashboard to guide training and improvement.",
+      image: "/projects_photo/pitching_project.png",
+      technologies: ["Python", "MongodDB", "FastAPI", "React", "Docker"],
       categories: ["fullstack"],
       demoUrl: "https://www.youtube.com/watch?v=fHkdFIOzQ_w",
       githubUrl: "https://github.com/yandersonpark1/BSBL-Scout",
       featured: true
     },
     {
-      id: 3,
-      title: "Machine Learning Protein Design Data Analysis",
-      description: "A data analysis pipeline for analyzing protein design results from various ML models including AlphaFold3 and LigandMPNN.",
-      image: "/projects_photo/protein_project.webp",
-      technologies: ["Python", "Pandas", "AlphaFold3", "PyMOL", "LigandMPNN"],
-      categories: ["biochemistry", "ai"],
-      demoUrl: "#",
-      githubUrl: "https://github.com/yandersonpark1/Protein-Design-Research-",
-      featured: false
+      id: 4,
+      title: "Real-Time Chat Application",
+      description:"Built and deployed a real-time messaging application supporting 25+ concurrent users using WebSockets, with a Rust-based backend and PostgreSQL for persistent message storage and user management.",
+      image: "/projects_photo/chat_room.jpg", 
+      technologies: ["Next.js", "React", "Rust", "PostgreSQL", "WebSockets"],
+      categories: ["fullstack"],
+      demoUrl: "#", // or deployed URL if you have one
+      githubUrl: "https://github.com/yandersonpark1/Lo-Qui",
+      featured: true
     },
   ]
 
   const categories = [
     { id: 'all', label: 'All Projects', count: projects.length },
-    { id: 'frontend', label: 'Frontend', count: projects.filter(p => p.categories.includes('frontend')).length },
     { id: 'fullstack', label: 'Full Stack', count: projects.filter(p => p.categories.includes('fullstack')).length },
     { id: 'ai', label: 'AI/ML', count: projects.filter(p => p.categories.includes('ai')).length },
     { id: 'biochemistry', label: 'BioChemistry', count: projects.filter(p => p.categories.includes('biochemistry')).length },
